@@ -1,9 +1,20 @@
-<script>
+<script lang="ts">
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
-	import Header from './Header.svelte';
+	import '../app.postcss';
 	import './styles.css';
+
+	import {
+		AppBar,
+		AppShell,
+		LightSwitch,
+		storePopup,
+		popup,
+
+		Avatar
+
+	} from '@skeletonlabs/skeleton';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -18,22 +29,24 @@
 </script>
 
 <div class="app">
-	<Header />
-
 	<main>
 		<slot />
 	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
 </div>
+<p>teste</p>
+<button type="button" class="btn-icon variant-filled-primary">(icon)</button>
+<button type="button" class="btn variant-filled-primary">Button</button>
+<button type="button" class="btn variant-filled-primary">
+	<i class="bi bi-cart"></i>
+	<span>(icon)</span>
+	<span>Button</span>
+</button>
 
 <style>
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		min-height: 50vh;
 	}
 
 	main {
@@ -47,21 +60,4 @@
 		box-sizing: border-box;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>

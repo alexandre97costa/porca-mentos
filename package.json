@@ -39,8 +39,5 @@
 		"vitest": "^0.25.8",
 		"web-vitals": "^3.5.0"
 	},
-	"type": "module",
-	"dependencies": {
-		"bootstrap-icons": "^1.11.3"
-	}
+	"type": "module"
 }

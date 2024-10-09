@@ -5,16 +5,7 @@
 	import '../app.postcss';
 	import './styles.css';
 
-	import {
-		AppBar,
-		AppShell,
-		LightSwitch,
-		storePopup,
-		popup,
-
-		Avatar
-
-	} from '@skeletonlabs/skeleton';
+	import { AppBar, AppShell, LightSwitch, storePopup, popup, Avatar } from '@skeletonlabs/skeleton';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -32,15 +23,15 @@
 	<main>
 		<slot />
 	</main>
+	<p>teste</p>
+	<button type="button" class="btn-icon variant-filled-primary">(icon)</button>
+	<button type="button" class="btn variant-filled-primary">Button</button>
+	<button type="button" class="btn variant-filled-primary">
+		<i class="bi bi-cart" />
+		<span>(icon)</span>
+		<span>Button</span>
+	</button>
 </div>
-<p>teste</p>
-<button type="button" class="btn-icon variant-filled-primary">(icon)</button>
-<button type="button" class="btn variant-filled-primary">Button</button>
-<button type="button" class="btn variant-filled-primary">
-	<i class="bi bi-cart"></i>
-	<span>(icon)</span>
-	<span>Button</span>
-</button>
 
 <style>
 	.app {
@@ -59,5 +50,4 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
-
 </style>

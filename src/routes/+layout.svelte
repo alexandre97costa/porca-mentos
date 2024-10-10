@@ -4,6 +4,8 @@
 	import { webVitals } from '$lib/vitals';
 	import '../app.postcss';
 	import './styles.css';
+	import pigEmoji from '$lib/images/pig-emoji.png'
+	import pigSplash from '$lib/images/porcamento-transparent.png'
 
 	import {
 		AppBar,
@@ -30,16 +32,19 @@
 <div class="app">
 	<AppBar>
 		<svelte:fragment slot="lead">
-			<img src="../static/favicon.png" alt="">
+			<img class="app-icon" src={pigEmoji} alt="pig emoji">
 		</svelte:fragment>
-		(title)
-		<svelte:fragment slot="trail">(actions)</svelte:fragment>
+		<h3 class="h3">Porca Mentos</h3>
+		<svelte:fragment slot="trail">
+			<i class="bi bi-gear"></i>
+		</svelte:fragment>
 	</AppBar>
 	<main class="container py-8 ">
 		<div class="grid grid-cols-2 gap-4">
 
-			<div>teste</div>
-			<div class="flex flex-col gap-4">
+			
+			<img src={pigSplash} alt="">
+			<div class="flex flex-col justify-center gap-4">
 				<FileDropzone name="alu-file" />
 				<FileDropzone name="vid-file" />
 			</div>
@@ -49,9 +54,14 @@
 </div>
 
 <style>
+
 	.app {
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+	}
+
+	.app-icon {
+		max-height: 40px;
 	}
 </style>

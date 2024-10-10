@@ -5,7 +5,15 @@
 	import '../app.postcss';
 	import './styles.css';
 
-	import { AppBar, AppShell, LightSwitch, storePopup, popup, Avatar } from '@skeletonlabs/skeleton';
+	import {
+		AppBar,
+		FileDropzone,
+		AppShell,
+		LightSwitch,
+		storePopup,
+		popup,
+		Avatar
+	} from '@skeletonlabs/skeleton';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -20,34 +28,30 @@
 </script>
 
 <div class="app">
-	<main>
-		<slot />
+	<AppBar>
+		<svelte:fragment slot="lead">
+			<img src="../static/favicon.png" alt="">
+		</svelte:fragment>
+		(title)
+		<svelte:fragment slot="trail">(actions)</svelte:fragment>
+	</AppBar>
+	<main class="container py-8 ">
+		<div class="grid grid-cols-2 gap-4">
+
+			<div>teste</div>
+			<div class="flex flex-col gap-4">
+				<FileDropzone name="alu-file" />
+				<FileDropzone name="vid-file" />
+			</div>
+		</div>
 	</main>
-	<p>teste</p>
-	<button type="button" class="btn-icon variant-filled-primary">(icon)</button>
-	<button type="button" class="btn variant-filled-primary">Button</button>
-	<button type="button" class="btn variant-filled-primary">
-		<i class="bi bi-cart" />
-		<span>(icon)</span>
-		<span>Button</span>
-	</button>
+	<slot />
 </div>
 
 <style>
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 50vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
+		min-height: 100vh;
 	}
 </style>
